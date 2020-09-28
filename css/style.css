@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 80%;
+    margin-left: 10%;
+}
+
+
+
+/*----------------------------HEADER---------------------------*/
+
+.sticky {
+   
+    position: sticky;
+    top: 0;
+  }
+
+
+header nav {
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: flex;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	background-color: #ff6767;
+}
+header nav a {
+	padding: 25px;
+	-webkit-align-self: center;
+	    -ms-flex-item-align: center;
+	            -ms-grid-row-align: center;
+	        align-self: center;
+
+}
+
+header nav a:hover {
+	color: #8ab3fb;
+}
+
+header nav a img{
+	display: block;
+
+}
+
+
+/*----------------------------MAIN---------------------------*/
+
+
+.sondages{
+    width: 40%;
+    margin-left: 30%;
+    text-align: center;
+}
+
+    h2{
+    margin-top: 5vh ;
+    color: #fff;
+    font-size: 3vh;
+    background-color: darkblue;
+
+}
+
+.sond{
+    background-color: darkgreen;
+}
+
+.image{
+    width: 90%;
+    margin-top: 3vh;
+    
+}
+
+.choix{
+    display: flex;
+    justify-content: space-around;
+}
+
+.reponse {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.reponse:hover{
+    background-color: #327635;
+}
+
+
+/*----------------------------FOOTER---------------------------*/
+
+
+.footer {
+    height: 30vh;
+    width: 100%;
+    margin-top: 10vh;
+}
+
+
+.ligne1 {
+    display: flex;
+    margin-top: 6vh;
+}
+
+.subtitle {
+    font-size: 3vh;
+    margin-left: 15vh;
+    display: flex;
+}
+
+.logos {
+    display: flex;
+    margin-left: 20%;
+    justify-content: space-around;
+    
+}
+
+.lelogo {
+    margin-top: 2.5vh;
+    margin-left: 11vh;
+    height: 32px;
+}
+
+.trait3 {
+    height: 2px;
+    width: 80%;
+    background-color: #dedede;
+    margin-left: 10%;
+    margin-top: 4vh;
+
+}
+
+.phrase {
+    font-size: 2vh;
+    margin-top: 7vh;
+    margin-left: 15vh;
+
+}
+
+
+
+
+
+
+@media screen and (max-width: 400px) and (max-width: 682px) {
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    body{
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /*----------------------------HEADER---------------------------*/
+
+    header nav a img{
+        height: 32px;
+        padding: 0px;
+    
+    }
+    header nav a{
+        padding-left: 20;
+    }
+
+
+    /*----------------------------MAIN---------------------------*/
+
+
+    .sondages{
+        width: 90%;
+        margin-left: 5%;
+    }
+
+
+    /*---------------footer----------------*/
+
+
+    .footer {
+        height: 30vh;
+        width: 100%;
+    }
+
+    .subtitle {
+        font-size: 4vh;
+        margin-top: 2vh;
+        text-align: center;
+        height: 7vh;
+    }
+
+    .ligne1 {
+        margin-top: 6vh;
+        display: block;
+    }
+
+    .logos {
+        justify-content: space-between;
+        margin-left: 4vh;
+        margin-right: 4vh;
+        margin-bottom: 7vh;
+        height: 32px;
+    }
+
+    .lelogo {
+        margin-top: 2.5vh;
+        margin-left: 3vh;
+        height: 5vh;
+
+    }
+
+    .phrase {
+        font-size: 2vh;
+        margin-top: 5vh;
+        text-align: center;
+        margin-left: 0;
+        height: 7vh;
+
+    }
+
+}
