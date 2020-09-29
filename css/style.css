@@ -43,10 +43,10 @@ header nav a img{
 	display: block;
 
 }
+/*----------------------------MAIN---------------------------*/
 
 /*-------------------------------------------------INDEX.HTML-----------------------------------------*/
 
-/*----------------------------MAIN---------------------------*/
 
 
 .sondages{
@@ -63,7 +63,7 @@ h2{
 }
 
 .sond{
-    background-color: darkgreen;
+    background-color: rgb(67, 105, 196);
 }
 
 .image{
@@ -135,6 +135,74 @@ h2{
 }
 
 
+/*-------------------------------------------------CLASSEMENT.HTML-----------------------------------------*/
+
+.leclassement img{
+    width: 80%;
+    margin:5vh 10% 5vh 10%;
+}
+
+.moi{
+    width: 80%;
+    height: 5vh;
+    margin-left: 10%;
+    background-color: rgb(67, 81, 115);
+    text-align: center;
+    display: flex;
+    padding-top: 1.5vh;
+    position: sticky;
+    bottom: 0;
+}
+
+.moi p{
+    display: block;
+    text-align: left;
+    color: rgb(255, 255, 255);
+    font-size: 2.5vh;
+}
+
+.leaderboard{
+    width: 80%;
+    height: 100vh;
+    margin-left: 10%;
+    background-color: rgb(39, 48, 69);
+    text-align: center;
+    display: flex;
+}
+
+.position{
+    width: 7%;
+}
+
+.name{
+    width: 43%;
+}
+
+.nombre{
+    width: 25%;
+}
+.score{
+    width: 25%;
+}
+
+ 
+
+
+.leaderboard p{
+    display: block;
+    text-align: left;
+    color: rgb(255, 255, 255);
+    font-size: 2.5vh;
+    border-top: 1px ridge rgb(23, 28, 41);
+    margin-top: 2vh;
+}
+.name p{
+    margin-left: 5%;
+}
+
+.position p, .nombre p, .score p{
+    text-align: center;
+}
 /*----------------------------FOOTER---------------------------*/
 
 
@@ -222,12 +290,23 @@ h2{
         margin-left: 5%;
     }
 
+/*-------------------------------------------------SONDAGE.HTML-----------------------------------------*/
 
 
     .reponses{
         margin-top: 5vh;
         display: flex;
     }
+
+    /*-------------------------------------------------CLASSEMENT.HTML-----------------------------------------*/
+
+
+    .leaderboard, .moi{
+        width: 100%;
+        margin-left:0;
+    }
+
+   
 
 
     /*---------------footer----------------*/
