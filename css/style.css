@@ -9,7 +9,6 @@ body{
 }
 
 
-
 /*----------------------------HEADER---------------------------*/
 
 .sticky {
@@ -45,6 +44,7 @@ header nav a img{
 
 }
 
+/*-------------------------------------------------INDEX.HTML-----------------------------------------*/
 
 /*----------------------------MAIN---------------------------*/
 
@@ -55,12 +55,11 @@ header nav a img{
     text-align: center;
 }
 
-    h2{
+h2{
     margin-top: 5vh ;
     color: #fff;
     font-size: 3vh;
-    background-color: darkblue;
-
+    text-align: center;
 }
 
 .sond{
@@ -91,6 +90,48 @@ header nav a img{
 
 .reponse:hover{
     background-color: #327635;
+}
+
+/*-------------------------------------------------SONDAGE.HTML-----------------------------------------*/
+
+.lesondage{
+    height: 100vh;
+}
+
+.partie{
+    background-color: rgb(67, 105, 196);
+    height: 105vh;
+    border: 1px ridge black;
+}
+
+.partie .image{
+    width: 90%;
+    margin-left: 5%;
+    border: 1px ridge black;
+    
+}
+
+.reponses{
+    margin-top: 5vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+.proposition{
+    background-color: #ff9f67;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: 1px ridge gray;
+    width: 50vh;
+    height: 3vh;
+}
+
+.proposition:hover{
+    background-color: #bd774f;
 }
 
 
@@ -149,7 +190,7 @@ header nav a img{
 
 
 
-@media screen and (max-width: 400px) and (max-width: 682px) {
+@media screen and (max-width: 600px) and (max-width: 682px) {
 
     *{
         margin: 0;
@@ -179,6 +220,13 @@ header nav a img{
     .sondages{
         width: 90%;
         margin-left: 5%;
+    }
+
+
+
+    .reponses{
+        margin-top: 5vh;
+        display: flex;
     }
 
 
