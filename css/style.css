@@ -113,7 +113,9 @@ h2{
 .partie{
     background-color: rgb(83, 83, 83);
     height: 105vh;
+    width: 80%;
     margin-top: 5vh;
+    margin-left: 10%;
     -webkit-box-shadow: 0px 0px 48px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 48px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 48px 0px rgba(0,0,0,0.75);
@@ -351,7 +353,14 @@ h2{
 
 /*-------------------------------------------------SONDAGE.HTML-----------------------------------------*/
 
+    .partie{
+        height: 70vh;
+    }
 
+    .lesondage{
+        height: 70vh;
+    }
+    
     .reponses{
         margin-top: 5vh;
         display: flex;
@@ -372,15 +381,17 @@ h2{
 
 
     .footer {
-        height: 30vh;
+        height: 50vh;
         width: 100%;
     }
 
     .subtitle {
         font-size: 4vh;
-        margin-top: 2vh;
+        padding-top: 5vh;
         text-align: center;
         height: 7vh;
+        margin-left: 20vh;
+        
     }
 
     .ligne1 {
@@ -390,14 +401,12 @@ h2{
 
     .logos {
         justify-content: space-between;
-        margin-left: 4vh;
-        margin-right: 4vh;
-        margin-bottom: 7vh;
+        margin: 6vh 4vh 7vh 4vh;
         height: 32px;
     }
 
     .lelogo {
-        margin-top: 2.5vh;
+        margin-top: 0;
         margin-left: 3vh;
         height: 5vh;
 
