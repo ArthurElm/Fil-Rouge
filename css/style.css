@@ -6,6 +6,8 @@
 body{
     width: 80%;
     margin-left: 10%;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(64, 64, 64);
 }
 
 
@@ -15,6 +17,9 @@ body{
    
     position: sticky;
     top: 0;
+    -webkit-box-shadow: 0px 30px 25px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 30px 25px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 30px 25px 0px rgba(0,0,0,0.3); 
   }
 
 
@@ -24,7 +29,7 @@ header nav {
 	display: flex;
 	-ms-flex-pack: distribute;
 	    justify-content: space-around;
-	background-color: #ff6767;
+	background-color:  rgb(122, 122, 122);
 }
 header nav a {
 	padding: 25px;
@@ -56,14 +61,19 @@ header nav a img{
 }
 
 h2{
-    margin-top: 5vh ;
+    
+    padding-top: 2vh;
     color: #fff;
     font-size: 3vh;
     text-align: center;
 }
 
 .sond{
-    background-color: rgb(67, 105, 196);
+    margin-top: 5vh ;
+    background-color:  rgb(83, 83, 83);
+    -webkit-box-shadow: 0px 0px 48px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 48px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 48px 0px rgba(0,0,0,0.75);
 }
 
 .image{
@@ -78,18 +88,20 @@ h2{
 }
 
 .reponse {
-    background-color: #4CAF50;
+    background-color: rgb(106, 106, 106);
     border: none;
     color: white;
     padding: 15px 32px;
+    margin: 1vh;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
 }
 
+
 .reponse:hover{
-    background-color: #327635;
+    background-color:  rgb(150, 150, 150);
 }
 
 /*-------------------------------------------------SONDAGE.HTML-----------------------------------------*/
@@ -99,15 +111,17 @@ h2{
 }
 
 .partie{
-    background-color: rgb(67, 105, 196);
+    background-color: rgb(83, 83, 83);
     height: 105vh;
-    border: 1px ridge black;
+    margin-top: 5vh;
+    -webkit-box-shadow: 0px 0px 48px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 48px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 48px 0px rgba(0,0,0,0.75);
 }
 
 .partie .image{
     width: 90%;
     margin-left: 5%;
-    border: 1px ridge black;
     
 }
 
@@ -118,21 +132,54 @@ h2{
 }
 
 .proposition{
-    background-color: #ff9f67;
+    background-color:  rgb(106, 106, 106);
     border: none;
     color: white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
-    border: 1px ridge gray;
     width: 50vh;
-    height: 3vh;
+    height: 3vh;s
 }
 
+@keyframes bounce {
+    0%, 20%, 60%, 100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  
+    40% {
+      -webkit-transform: translateY(-20px);
+      transform: translateY(-20px);
+    }
+  
+    80% {
+      -webkit-transform: translateY(-10px);
+      transform: translateY(-10px);
+    }
+  }@keyframes bounce {
+    0%, 20%, 60%, 100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  
+    40% {
+      -webkit-transform: translateY(-20px);
+      transform: translateY(-20px);
+    }
+  
+    80% {
+      -webkit-transform: translateY(-10px);
+      transform: translateY(-10px);
+    }
+  }
+
 .proposition:hover{
-    background-color: #bd774f;
+    animation: bounce 1s;
 }
+
+
 
 
 /*-------------------------------------------------CLASSEMENT.HTML-----------------------------------------*/
@@ -172,6 +219,7 @@ h2{
 
 .position{
     width: 7%;
+    margin-left: 2vh;
 }
 
 .name{
@@ -207,9 +255,13 @@ h2{
 
 
 .footer {
-    height: 30vh;
+    height: 35vh;
     width: 100%;
     margin-top: 10vh;
+    margin-bottom: 10vh;
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.48);
+    -moz-box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.48);
+    box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.48);
 }
 
 
@@ -222,19 +274,23 @@ h2{
     font-size: 3vh;
     margin-left: 15vh;
     display: flex;
+    color: white;
+    margin-top: 10vh;
 }
 
 .logos {
     display: flex;
     margin-left: 20%;
     justify-content: space-around;
+    margin-top: 10vh;
     
 }
 
 .lelogo {
-    margin-top: 2.5vh;
     margin-left: 11vh;
     height: 32px;
+    filter: invert(100%); 
+    -webkit-filter:invert(100%);
 }
 
 .trait3 {
@@ -250,8 +306,11 @@ h2{
     font-size: 2vh;
     margin-top: 7vh;
     margin-left: 15vh;
+    color: white;
 
 }
+
+
 
 
 
