@@ -21,13 +21,13 @@ if(empty($_SESSION['membre'])) {
 
  <!-----------------------------HEADER--------------------------->
      <header class="sticky">
-        <nav>
+     <nav>
 			
-			<a href="index.html">
+			<a href="index.php">
 				<img src="img/pie-chart.png" alt="Sondages">
 				
 			</a>
-			<a href="classement.html">
+			<a href="classement.php">
                 <img src="img/trophy.png" alt="Classement">
 
 				
@@ -41,7 +41,14 @@ if(empty($_SESSION['membre'])) {
                 <img src="img/email (2).png" alt="Contact">
 
 				
-			</a>
+            </a>
+            <a href="modification.php">
+                <?php
+            if(isset($_SESSION['membre']['pseudo'])) {
+                echo $_SESSION['membre']['pseudo']; //  Affiche nom membre connecter
+            }
+            ?>
+            </a>
 		</nav>
 
      </header>
@@ -50,20 +57,71 @@ if(empty($_SESSION['membre'])) {
        <!-----------------------------MAIN--------------------------->
     <main class="lesondage">
 
-        <div class="partie">
-            <h2>Sondage 1</h2>
-            <img src="img/bgd.png" alt="image" class="image">
-            <reponses class="reponses">
-                <a href="#" class="proposition">A</a>
-                <a href="#" class="proposition">B</a>
-            </reponses>
-            <reponses class="reponses">
-                
-                <a href="#" class="proposition">C</a>
-                <a href="#" class="proposition">D</a>
-            </reponses>
-        </div>
+    <div class="partie">
+                <?php 
+                            
+                                
+                            $id_sond = $_GET['id'];
+                            // $verif_id = "";
 
+                            //     if ($verif_id !== $id_sond ){
+                            //         print_r ('ouiii sondage');
+                            //     }else{
+                            //         echo 'Aucun sondage';
+                            //         print_r ('Aucun sondage');
+                            //     }
+
+                            $sondage = $conn->query("SELECT * FROM creation WHERE id_sond = $id_sond");
+
+                            while($infos_sondage = $sondage->fetch(PDO::FETCH_ASSOC)){
+                            ?>
+                    <h2> <?php echo $infos_sondage['question'];?> </h2>
+                    <img src="img/bgd.png" alt="image" class="image">
+
+
+            <div class="reponses">
+                <button name="choixUn"> <?php echo $infos_sondage['choixUn'];?> </button>
+                <button name="choixDeux"> <?php echo $infos_sondage['choixDeux'];?></button>
+            </div>
+            <?php
+                            }
+                        
+                        
+                        ?>
+
+<div class="commentaires">
+                <div class="scroll">
+
+                    <!-- LE CHAT -->
+
+                    <div id="messages">
+
+                        <?php
+                                
+                                $liste_messages = $conn->query("SELECT * FROM messages  ORDER BY sendAt"); //recuperation les messages et leurs infos dans la table
+
+                                //boucle pour afficher les messages
+                                while($msg = $liste_messages->fetch(PDO::FETCH_ASSOC)){
+                                ?>
+                        <div>
+                            <!--On affiiche les éléments du message 1 par 1 -->
+                            <p> <?php echo $msg['user'];?>&nbsp|&nbsp</p>
+                            <p><?php echo $msg['content'];?></p>
+                            <p> | <?php echo $msg['sendAt'];?></p>
+                        </div>
+                        <?php
+                                }
+                                ?>
+                    </div>
+                </div>
+                <div class="comm">
+                    <p><?php  echo $_SESSION['membre']['pseudo']; ?></p>
+                    <form name="tchat">
+                        <input type="text" id="" required>
+                        <button id="send" method="POST" onclick="submitForm()">Envoyer</button>
+                    </form>
+                </div>
+            </div>
 
     </main>
 

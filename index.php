@@ -2,17 +2,11 @@
     include_once "includes/con_database.inc.php"; // les outils php pour le bon fonctionnement de ce site (ouverture de session, connexion à la BDD ...)
     $msg = "";
     // Code PHP
-    
-    if(isset($_SESSION['membre'])) {
-    $pseudo = $_SESSION['membre']['pseudo'];
-    $st_update = $conn->prepare("
-        UPDATE membre
-        SET statut = '1'
-        WHERE pseudo = '$pseudo'
-    ");
-    
-    $st_update->execute(); 
-    session_destroy();
+
+    // restriction d'accès : si l'utilisateur n'est pas connecté, on l'empéche de venir sur cette page avec une redirection.
+    if(empty($_SESSION['membre'])) {
+        // si c'est vide ou ça n'existe pas, alors l'utilisateur n'est pas connecté, on le redirige
+        header('location:deconnexion.php');
     }
 ?>
 
@@ -30,11 +24,11 @@
      <header class="sticky">
         <nav>
 			
-			<a href="index.html">
+			<a href="index.php">
 				<img src="img/pie-chart.png" alt="Sondages">
 				
 			</a>
-			<a href="classement.html">
+			<a href="classement.php">
                 <img src="img/trophy.png" alt="Classement">
 
 				
@@ -48,7 +42,14 @@
                 <img src="img/email (2).png" alt="Contact">
 
 				
-			</a>
+            </a>
+            <a href="modification.php">
+                <?php
+            if(isset($_SESSION['membre']['pseudo'])) {
+                echo $_SESSION['membre']['pseudo']; //  Affiche nom membre connecter
+            }
+            ?>
+            </a>
 		</nav>
 
      </header>
@@ -56,30 +57,35 @@
 
        <!-----------------------------MAIN--------------------------->
     <main class="sondages">
+    <?php
+        $liste_sond_term = $conn->query("SELECT * FROM creation WHERE dateFin < now() ORDER BY id_sond DESC");
+        ?>
 
-        <div class="sond">
-            <h2>Sondage 1</h2>
-            <img src="img/bgd.png" alt="image" class="image">
-            <choix class="choix">
-                <a href="sondage.html" class="reponse btn-4">Participer !</a>
-            </choix>
-        </div>
+    <article >
+        <h2>Sondages : <?php echo $liste_sond_term->rowCount(); ?></h2>
+            <section class="titresTermines">
+            <?php
+                while($sond_term = $liste_sond_term->fetch(PDO::FETCH_ASSOC)){
+            
+                        $id_sond = $sond_term['id_sond'];
+            ?>
+                <a href="sondage.php?id=<?php echo $id_sond ?>">   <!-- Redirection vers la page du sondage -->
+                    <div class="sond">
+                        <h2> <?php echo $sond_term['question'];?></h2>
+                        
+                        <img src="img/bgd.png" alt="image" class="image">
 
-        <div class="sond">
-            <h2>Sondage 1</h2>
-            <img src="img/bgd2.jpg" alt="image" class="image">
-            <choix class="choix">
-                <a href="sondage.html" class="reponse btn-4">Participer !</a>
-            </choix>
-        </div>
+                        <choix class="choix">
+                            <a href="sondage.php?id=<?php echo $id_sond ?>" class="reponse btn-4">Participer !</a>
+                        </choix>
+                    </div>
+                </a>
+                 <?php
+                }
+                ?>
 
-        <div class="sond">
-            <h2>Sondage 1</h2>
-            <img src="img/bgd3.png" alt="image" class="image">
-            <choix class="choix">
-                <a href="sondage.html" class="reponse btn-4">Participer !</a>
-            </choix>
-        </div>
+            </section>
+    </article>
 
     </main>
 
