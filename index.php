@@ -1,3 +1,21 @@
+<?php
+    include_once "includes/con_database.inc.php"; // les outils php pour le bon fonctionnement de ce site (ouverture de session, connexion à la BDD ...)
+    $msg = "";
+    // Code PHP
+    
+    if(isset($_SESSION['membre'])) {
+    $pseudo = $_SESSION['membre']['pseudo'];
+    $st_update = $conn->prepare("
+        UPDATE membre
+        SET statut = '1'
+        WHERE pseudo = '$pseudo'
+    ");
+    
+    $st_update->execute(); 
+    session_destroy();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

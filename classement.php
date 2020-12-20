@@ -1,3 +1,15 @@
+<?php
+    include_once "includes/con_database.inc.php";
+
+    // restriction d'accès : si l'utilisateur n'est pas connecté, on l'empéche de venir sur cette page avec une redirection.
+if(empty($_SESSION['membre'])) {
+    // si c'est vide ou ça n'existe pas, alors l'utilisateur n'est pas connecté, on le redirige
+    header('location:connexion.php');
+    
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
